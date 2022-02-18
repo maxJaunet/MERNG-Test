@@ -40,7 +40,6 @@ const registerMethod = async (parent, { registerInput: { username, email, passwo
     id: res._id,
     token
   }
-}
-
+};
 
 export default registerMethod;

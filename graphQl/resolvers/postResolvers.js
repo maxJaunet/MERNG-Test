@@ -9,6 +9,16 @@ const postResolvers = {
       } catch (error) {
         throw new Error(error)
       }
+    },
+    getPost: async (parent, { postId }) => {
+      try {
+        const post = await Post.findById(postId);
+        if (post) {
+          return post;
+        }
+      } catch (error) {
+        throw new Error('Post not found', { error });
+      }
     }
   }
 };

@@ -17,7 +17,6 @@ const postSchema = new mongoose.Schema({
       createdAt: String
     }
   ]
-  
 });
 
 export default mongoose.model('Post', postSchema);

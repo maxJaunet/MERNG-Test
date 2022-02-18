@@ -16,6 +16,7 @@ type User {
 }
 type Query {
   getPosts: [Post]
+  getPost(postId: ID!): Post
 }
 input RegisterInput {
   username: String!
@@ -26,6 +27,8 @@ input RegisterInput {
 type Mutation {
   register(registerInput: RegisterInput): User!
   login(username: String!, password: String!): User!
+  createPost(body: String!): Post!
+  deletePost(postId: ID): String!
 }`
 
 export default typeDefs;
