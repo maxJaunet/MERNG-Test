@@ -9,7 +9,8 @@ import typeDefs from './graphQl/typeDefs.js';
 
 const server = new ApolloServer({
   typeDefs,
-  resolvers 
+  resolvers,
+  context: ({req}) => ({req})
 });
 
 const SERVER_PORT = process.env.PORT | 5000; 
